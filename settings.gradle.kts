@@ -3,4 +3,4 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
-rootProject.name = 'librarybooking'
+rootProject.name = "librarybooking"
