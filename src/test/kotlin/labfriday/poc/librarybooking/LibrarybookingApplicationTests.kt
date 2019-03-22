@@ -12,5 +12,4 @@ class LibrarybookingApplicationTests {
     @Test
     fun contextLoads() {
     }
-
 }

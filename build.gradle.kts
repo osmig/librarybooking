@@ -1,12 +1,17 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.jlleitschuh.gradle.ktlint.KtlintExtension
+import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
 
 plugins {
     id("org.springframework.boot") version "2.1.3.RELEASE"
     id("org.jetbrains.kotlin.jvm") version "1.3.21"
     id("org.jetbrains.kotlin.plugin.spring") version "1.3.21"
+    id("org.jlleitschuh.gradle.ktlint-idea") version "7.2.1"
 }
 
-apply(plugin = "io.spring.dependency-management")
+apply {
+    plugin("io.spring.dependency-management")
+    plugin("org.jlleitschuh.gradle.ktlint")
+}
 
 group = "labfriday.poc"
 version = "0.0.1-SNAPSHOT"
@@ -15,7 +20,6 @@ java {
     sourceCompatibility = JavaVersion.VERSION_1_8
     targetCompatibility = JavaVersion.VERSION_1_8
 }
-
 
 repositories {
     mavenCentral()
@@ -42,4 +46,10 @@ tasks.compileTestKotlin {
         freeCompilerArgs = listOf("-Xjsr305=strict")
         jvmTarget = "1.8"
     }
+}
+configure<KtlintExtension> {
+    verbose.set(true)
+    outputToConsole.set(true)
+    coloredOutput.set(true)
+    reporters.set(setOf(ReporterType.CHECKSTYLE, ReporterType.JSON))
 }
