@@ -1,7 +1,6 @@
-package labfriday.poc.librarybooking.controllers
+package labfriday.poc.librarybooking.web.controllers
 
-import labfriday.poc.librarybooking.webdtos.ReservationConfirmation
-import labfriday.poc.librarybooking.webdtos.Status
+import labfriday.poc.librarybooking.web.dto.ReservationConfirmation
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.stereotype.Controller
@@ -9,7 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
 import java.time.LocalDateTime
-import java.util.UUID
 
 @Controller
 @RequestMapping("/api/{bookId}")

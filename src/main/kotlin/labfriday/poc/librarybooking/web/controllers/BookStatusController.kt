@@ -1,6 +1,6 @@
-package labfriday.poc.librarybooking.controllers
+package labfriday.poc.librarybooking.web.controllers
 
-import labfriday.poc.librarybooking.webdtos.Status
+import labfriday.poc.librarybooking.web.dto.Status
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.stereotype.Controller

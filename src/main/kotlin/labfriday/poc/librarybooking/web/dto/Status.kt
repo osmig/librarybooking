@@ -1,4 +1,4 @@
-package labfriday.poc.librarybooking.webdtos
+package labfriday.poc.librarybooking.web.dto
 
 data class Status(
     val bookId: String,
